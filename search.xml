@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Why Tuple?</title>
+    <url>/2021/09/21/WhyTuple?/</url>
+    <content><![CDATA[<p>C++ 11 introduces a template Tuple, similar to the one in Python, allows you to store data of different types in a single entity. But you may ask, in C/C++,we already have some mechaism called struct allows us to do the same thing, then why do we need tuple?</p>
+<h3 id="Case-1-One-Time-Structure-to-Transfer-Data"><a href="#Case-1-One-Time-Structure-to-Transfer-Data" class="headerlink" title="Case 1: One-Time Structure to Transfer Data"></a>Case 1: One-Time Structure to Transfer Data</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">tuple&lt;string,<span class="keyword">int</span>&gt; <span class="title">getNameAge</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_tuple</span>(<span class="string">&quot;Bob&quot;</span>,<span class="number">34</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Person</span>&#123;</span>string name;<span class="keyword">int</span> age;&#125;p;</span><br><span class="line">    tuple&lt;string,<span class="keyword">int</span>&gt; t;</span><br><span class="line">    </span><br><span class="line">    string name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="built_in">tie</span>(name,age) = <span class="built_in">getNameAge</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>If we want to transfer a group of data for only one time, we may not want to define a struct, and using tuple get us away from these definitions.</p>
+<h3 id="Case-2-Fast-Comparison-Using-Tuple-Operators"><a href="#Case-2-Fast-Comparison-Using-Tuple-Operators" class="headerlink" title="Case 2:Fast Comparison Using Tuple Operators"></a>Case 2:Fast Comparison Using Tuple Operators</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">tuple&lt;<span class="keyword">int</span>,<span class="keyword">int</span>,<span class="keyword">int</span>&gt; time1,time2;</span><br><span class="line"><span class="keyword">if</span>(time1&gt;time2)</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;time1 is later&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Case-3-Multi-Index-Map-Unordered-Map"><a href="#Case-3-Multi-Index-Map-Unordered-Map" class="headerlink" title="Case 3:Multi-Index Map/Unordered Map"></a>Case 3:Multi-Index Map/Unordered Map</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//define</span></span><br><span class="line">map&lt;tuple&lt;<span class="keyword">int</span>,<span class="keyword">char</span>,<span class="keyword">float</span>&gt;,string&gt; m;</span><br><span class="line"><span class="comment">//indexing</span></span><br><span class="line">m[<span class="built_in">make_tuple</span>(<span class="number">2</span>,<span class="string">&#x27;a&#x27;</span>,<span class="number">1.0</span>)] = <span class="string">&quot;Test&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Case-4-Fast-Swap"><a href="#Case-4-Fast-Swap" class="headerlink" title="Case 4:Fast Swap"></a>Case 4:Fast Swap</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="built_in">tie</span>(b,c,a) = <span class="built_in">make_tuple</span>(a,b,c);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion:"></a>Conclusion:</h3><p>Tuple is not recommended to be overused. If needed, use struct instead.</p>
+]]></content>
+      <categories>
+        <category>Programming</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>Data_Structure</tag>
+      </tags>
+  </entry>
+</search>
