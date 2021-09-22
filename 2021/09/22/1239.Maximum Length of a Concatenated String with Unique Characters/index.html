@@ -54,7 +54,7 @@
 
         </div>
         <div class="content markdown">
-            <h3 id="Maximum-Length-of-a-Concatenated-String-with-Unique-Characters"><a href="#Maximum-Length-of-a-Concatenated-String-with-Unique-Characters" class="headerlink" title="Maximum Length of a Concatenated String with Unique Characters"></a>Maximum Length of a Concatenated String with Unique Characters</h3><p>Given an array of strings <code>arr</code>. String <code>s</code> is a concatenation of a ==sub-sequence== of <code>arr</code> which have <strong>unique characters</strong>.</p>
+            <h3 id="Maximum-Length-of-a-Concatenated-String-with-Unique-Characters"><a href="#Maximum-Length-of-a-Concatenated-String-with-Unique-Characters" class="headerlink" title="Maximum Length of a Concatenated String with Unique Characters"></a>Maximum Length of a Concatenated String with Unique Characters</h3><p>Given an array of strings <code>arr</code>. String <code>s</code> is a concatenation of a <mark>sub-sequence</mark> of <code>arr</code> which have <strong>unique characters</strong>.</p>
 <p>Return <em>the maximum possible length</em> of <code>s</code>.</p>
 <h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: arr = [&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: All possible concatenations are &quot;&quot;,&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;,&quot;uniq&quot; and &quot;ique&quot;.</span><br><span class="line">Maximum length is 4.</span><br></pre></td></tr></table></figure>
 
@@ -83,13 +83,13 @@
 </ul>
 <h3 id="BruteForce"><a href="#BruteForce" class="headerlink" title="BruteForce:"></a>BruteForce:</h3><p>Traverse all the string pair, find if the concantenated string has duplicate char.</p>
 <blockquote>
-<p>Time Complexity $$O(2^n)$$ : each string can be cancatenated or not.</p>
+<p>Time Complexity $O(2^n)$ : each string can be cancatenated or not.</p>
 </blockquote>
 <h3 id="Technique"><a href="#Technique" class="headerlink" title="Technique:"></a>Technique:</h3><p>Since the arr[i].length&lt;=26&lt;32, we can use a 32bit int to do the char count</p>
 <p>(How many times each character present in a string instead of map)</p>
 <blockquote>
-<p>Time Complexity $$O(2^n)$$ : each string can be cancatenated or not.</p>
-<p>Space Complexity $$O(n)$$ : using DFS recursion, the space complexity equals to the depth of recursion.</p>
+<p>Time Complexity $O(2^n)$ : each string can be cancatenated or not.</p>
+<p>Space Complexity $O(n)$ : using DFS recursion, the space complexity equals to the depth of recursion.</p>
 </blockquote>
 <h4 id="Sample"><a href="#Sample" class="headerlink" title="Sample:"></a>Sample:</h4><p><img src="https://i.loli.net/2021/09/22/xbP8JXEZH7VWzdl.png" alt="image-20210922201019533"></p>
 <blockquote>
