@@ -294,4 +294,66 @@
         <tag>DataStructure</tag>
       </tags>
   </entry>
+  <entry>
+    <title>thread and process</title>
+    <url>/2021/10/08/thread%20and%20process/</url>
+    <content><![CDATA[<h3 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h3><ul>
+<li>smallest sequence of programmed instructions that can be managed independently by a scheduler.</li>
+<li>Has its own registers, PC. SP.</li>
+</ul>
+<h3 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h3><ul>
+<li>Instance of a computer program that is being executed</li>
+<li>A process can have one or more threads</li>
+</ul>
+<h3 id="Parallel-Computing"><a href="#Parallel-Computing" class="headerlink" title="Parallel Computing"></a>Parallel Computing</h3><ul>
+<li>Run programs on one or more CPUs</li>
+<li>Multi-threading (shared memory)</li>
+<li>Multi-processing (Independent-memory)</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123; a += <span class="number">1</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">std::thread <span class="title">thread1</span><span class="params">(run)</span></span>;</span><br><span class="line">    <span class="function">std::thread <span class="title">thread2</span><span class="params">(run)</span></span>;</span><br><span class="line">    </span><br><span class="line">    thread1.<span class="built_in">join</span>(); <span class="comment">//only return after the thread1 finish</span></span><br><span class="line">    thread2.<span class="built_in">join</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// only main thread will execute</span></span><br><span class="line">    std::cout&lt;&lt;a&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Multithreading"><a href="#Multithreading" class="headerlink" title="Multithreading:"></a>Multithreading:</h3><p><img src="https://i.loli.net/2021/10/08/43roIiyfq6DAgS7.png" alt="image-20211008194305920"></p>
+<p>Shared memory, so variable can be accessed by both threads.</p>
+<p>However, <strong>when multithreads write (non-atomic instruction) a shared variable, inconsistency could happen.</strong></p>
+<h3 id="Problem-Access-shared-resources"><a href="#Problem-Access-shared-resources" class="headerlink" title="Problem:Access shared resources:"></a>Problem:Access shared resources:</h3><p>CPU may process instructions randomly.</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">a += <span class="number">1</span>;<span class="comment">//non-atomic</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">LOAD a,r</span><br><span class="line">INC r</span><br><span class="line">STORE r,a</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">LOAD a,r1</span><br><span class="line">LOAD a,r2</span><br><span class="line">INC r1</span><br><span class="line">STORE r1,a</span><br><span class="line">INC r2,</span><br><span class="line">STORE r2,a</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">LOAD a,r1</span><br><span class="line">INC r1</span><br><span class="line">STORE r1,a</span><br><span class="line">// this is sequential</span><br><span class="line">LOAD a,r2</span><br><span class="line">INC r2</span><br><span class="line">STORE r2,a</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="To-fix"><a href="#To-fix" class="headerlink" title="To fix:"></a>To fix:</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//thread blocking</span></span><br><span class="line">	l.<span class="built_in">lock</span>();</span><br><span class="line">    a+=<span class="number">1</span>;</span><br><span class="line">    l.<span class="built_in">unlock</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Note: only use lock when going to the critical section, becuase multithreading is much faster.</p>
+<h4 id="Communicate"><a href="#Communicate" class="headerlink" title="Communicate:"></a>Communicate:</h4><ul>
+<li>shared variable</li>
+<li>semaphore, mutex, lock</li>
+</ul>
+<h3 id="Multiprocessing"><a href="#Multiprocessing" class="headerlink" title="Multiprocessing:"></a>Multiprocessing:</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">(<span class="keyword">bool</span> child)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    a+=child?<span class="number">2</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    a+=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">pid_t</span> pid = fork();<span class="comment">//create a parallel universe</span></span><br><span class="line">    <span class="comment">// all processes will execute this</span></span><br><span class="line">    <span class="built_in">run</span>(pid==<span class="number">0</span>);</span><br><span class="line">    cour&lt;&lt;a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/10/08/lxveEnH8zRh6TqB.png" alt="image-20211008195339005"></p>
+<p>The pid returned by the fork() will not be 0 (0 as child process)</p>
+<p>pid is the child process, should be 2+2;</p>
+<p>pid is the parent process, should be 2+1;</p>
+<h4 id="Communicate-1"><a href="#Communicate-1" class="headerlink" title="Communicate:"></a>Communicate:</h4><ul>
+<li>shared memory</li>
+<li>pipe</li>
+<li>socket</li>
+<li>RPC</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Computing</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>Operating System</tag>
+      </tags>
+  </entry>
 </search>
