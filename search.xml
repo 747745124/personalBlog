@@ -48,7 +48,7 @@
   <entry>
     <title>1239.Maximum Length of a Concatenated String with Unique Characters</title>
     <url>/2021/09/22/1239.Maximum%20Length%20of%20a%20Concatenated%20String%20with%20Unique%20Characters/</url>
-    <content><![CDATA[<h3 id="Maximum-Length-of-a-Concatenated-String-with-Unique-Characters"><a href="#Maximum-Length-of-a-Concatenated-String-with-Unique-Characters" class="headerlink" title="Maximum Length of a Concatenated String with Unique Characters"></a>Maximum Length of a Concatenated String with Unique Characters</h3><p>Given an array of strings <code>arr</code>. String <code>s</code> is a concatenation of a <mark>sub-sequence</mark> of <code>arr</code> which have <strong>unique characters</strong>.</p>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an array of strings <code>arr</code>. String <code>s</code> is a concatenation of a <mark>sub-sequence</mark> of <code>arr</code> which have <strong>unique characters</strong>.</p>
 <p>Return <em>the maximum possible length</em> of <code>s</code>.</p>
 <h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Input: arr = [&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: All possible concatenations are &quot;&quot;,&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;,&quot;uniq&quot; and &quot;ique&quot;.</span><br><span class="line">Maximum length is 4.</span><br></pre></td></tr></table></figure>
 
@@ -181,7 +181,7 @@
       </tags>
   </entry>
   <entry>
-    <title>ノエルのテーマ　〜最後の旅〜</title>
+    <title>ノエルのテーマ 〜最後の旅〜</title>
     <url>/2021/09/27/%E3%83%8E%E3%82%A8%E3%83%AB%E3%81%AE%E3%83%86%E3%83%BC%E3%83%9E%E3%80%80%E3%80%9C%E6%9C%80%E5%BE%8C%E3%81%AE%E6%97%85%E3%80%9C/</url>
     <content><![CDATA[<h4 id="Original-Lyrics"><a href="#Original-Lyrics" class="headerlink" title="Original Lyrics:"></a>Original Lyrics:</h4><p>Long ago, when I was just a boy<br>So alone that last of my kind in the world<br>I believe futures could be reborn<br>I would go back in time<br>Change what’s to come</p>
 <p>Hunting, searching for futures I’ve dreamed<br>Ever chasing, believing visions unseen<br>Hearing that hope is futile<br>Only inspires me not to give up</p>
@@ -359,7 +359,7 @@
   <entry>
     <title>The 2nd-shortest Path</title>
     <url>/2021/10/21/Second%20Shortest%20Path%20in%20Graph/</url>
-    <content><![CDATA[<h1 id="Lab-The-2nd-shortest-Path"><a href="#Lab-The-2nd-shortest-Path" class="headerlink" title="Lab: The 2nd-shortest Path"></a>Lab: The 2nd-shortest Path</h1><h4 id="Date-11-19-2021"><a href="#Date-11-19-2021" class="headerlink" title="Date:11.19.2021"></a>Date:11.19.2021</h4><blockquote>
+    <content><![CDATA[<h4 id="Date-11-19-2021"><a href="#Date-11-19-2021" class="headerlink" title="Date:11.19.2021"></a>Date:11.19.2021</h4><blockquote>
 <h3 id="Update-Log-11-25-2021"><a href="#Update-Log-11-25-2021" class="headerlink" title="Update Log 11.25.2021:"></a>Update Log 11.25.2021:</h3><h4 id="Comptability："><a href="#Comptability：" class="headerlink" title="Comptability："></a>Comptability：</h4><p>Known issue has been included in README.md</p>
 <p>Recommend to compile with clang++，or Visual Studio 2019 CE.<br>Lab Files has been compiled and reviewed under MacOS 12.0.1，and Windows 10 + CMake 3.19 + Visual Studio Community 2019.</p>
 <p>Set CMake minimum requirement to 3.14</p>
@@ -678,7 +678,7 @@ if it&#39;s shorter, update table with the **path length and predecessor**
   <entry>
     <title>Portfolio Site</title>
     <url>/2021/12/15/Portfolio%20Site%20Online/</url>
-    <content><![CDATA[<h1 id="Portfolio-Site-Online"><a href="#Portfolio-Site-Online" class="headerlink" title="Portfolio Site Online"></a>Portfolio Site Online</h1><p>Recently I began my Master application for 2022 Fall, and some of the universities (UCSB), require the applicants to submit their portfolio in the form of personal website. I was intended to submit this site, however, this site only contains daily logs and technical topic posts. So I would rather create another website for my portfolio works.</p>
+    <content><![CDATA[<p>Recently I began my Master application for 2022 Fall, and some of the universities (UCSB), require the applicants to submit their portfolio in the form of personal website. I was intended to submit this site, however, this site only contains daily logs and technical topic posts. So I would rather create another website for my portfolio works.</p>
 <p>After one afternoon’s work, new Portfolio Website was online, powering by Wix. Actually I found the Wix tool quite easy to use, only drags and drops are needed, just like what they’ve shown in the Youtube ads. The problem is, it’s not suitable for me to contantly update the contents since it tooks a lot more to render a single site in Wix. You have to drag and drop each paragraph yourself. However, it’s pretty easy to publish a post in Hexo. I can just use Typora and markdown to upload a post in seconds. Also, Wix doesn’t have good support for code snippets as the Markdown does. So I‘m just gonna post most of my daily thoughts and progresses here. And major works on the portfolio site.</p>
 <p>I actually want to merge these two sites, this site and the portfolio site, into one. However, I find the two sites’ styles are quite different and I’m not interested in writing pieces of CSS code anyway. Maybe I will merge them someday.</p>
 <p>Finally, if you are interested in my portfolio, check  <a href = "https://zhaonzh.wixsite.com/mysite-1">Portfolio Site</a>.</p>
