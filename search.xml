@@ -48,7 +48,7 @@
   <entry>
     <title>1239.Maximum Length of a Concatenated String with Unique Characters</title>
     <url>/2021/09/22/1239.Maximum%20Length%20of%20a%20Concatenated%20String%20with%20Unique%20Characters/</url>
-    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an array of strings <code>arr</code>. String <code>s</code> is a concatenation of a <mark>sub-sequence</mark> of <code>arr</code> which have <strong>unique characters</strong>.</p>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h3><p>Given an array of strings <code>arr</code>. String <code>s</code> is a concatenation of a <mark>sub-sequence</mark> of <code>arr</code> which have <strong>unique characters</strong>.</p>
 <p>Return <em>the maximum possible length</em> of <code>s</code>.</p>
 <h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Input: arr = [&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: All possible concatenations are &quot;&quot;,&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;,&quot;uniq&quot; and &quot;ique&quot;.</span><br><span class="line">Maximum length is 4.</span><br></pre></td></tr></table></figure>
 
@@ -105,7 +105,7 @@
   <entry>
     <title>98.Validate Binary Search Tree</title>
     <url>/2021/09/30/98.ValidateBST/</url>
-    <content><![CDATA[<h2 id="98-Validate-Binary-Search-Tree"><a href="#98-Validate-Binary-Search-Tree" class="headerlink" title="98.Validate Binary Search Tree"></a>98.Validate Binary Search Tree</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h3><p>Given the <code>root</code> of a binary tree, <em>determine if it is a valid binary search tree (BST)</em>.</p>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h3><p>Given the <code>root</code> of a binary tree, <em>determine if it is a valid binary search tree (BST)</em>.</p>
 <p>A <strong>valid BST</strong> is defined as follows:</p>
 <ul>
 <li>The left subtree of a node contains only nodes with keys <strong>less than</strong> the node’s key.</li>
