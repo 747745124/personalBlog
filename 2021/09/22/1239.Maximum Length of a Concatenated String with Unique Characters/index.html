@@ -58,9 +58,13 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">1239.Maximum Length of a Concatenated String with Unique Characters</h1>
+        <h1 class="title">
+            1239.Maximum Length of a Concatenated String with Unique Characters
+        </h1>
         <div class="stuff">
-            <span>九月 22, 2021</span>
+            <span>
+                September 22, 2021
+            </span>
             
   <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/DataStructure/" rel="tag">DataStructure</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Medium/" rel="tag">Medium</a></li></ul>
 
@@ -111,26 +115,25 @@
 <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">Input: arr = [&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;]</span></span><br><span class="line"><span class="comment">Output: 4</span></span><br><span class="line"><span class="comment">Explanation: All possible concatenations are &quot;&quot;,&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;,&quot;uniq&quot; and &quot;ique&quot;.</span></span><br><span class="line"><span class="comment">Maximum length is 4.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxLength</span><span class="params">(vector&lt;string&gt; &amp;arr)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//valid string</span></span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; a;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> string &amp;x : arr)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//bit representations</span></span><br><span class="line">            <span class="keyword">int</span> mask = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> ch : x)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//bit representation</span></span><br><span class="line">                mask |= <span class="number">1</span> &lt;&lt; (ch - <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//if the char used != the length of string, it contains duplicates.</span></span><br><span class="line">            <span class="comment">//ignore the string</span></span><br><span class="line">            <span class="keyword">if</span> (__builtin_popcount(mask) != x.<span class="built_in">length</span>())</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">            a.<span class="built_in">push_back</span>(mask);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//s is the index of string, mask is the present state</span></span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        function&lt;<span class="built_in"><span class="keyword">void</span></span>(<span class="keyword">int</span>, <span class="keyword">int</span>)&gt; dfs = [&amp;](<span class="keyword">int</span> s, <span class="keyword">int</span> mask)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//update the result</span></span><br><span class="line">            ans = <span class="built_in">max</span>(ans, __builtin_popcount(mask));</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = s; i &lt; a.<span class="built_in">size</span>(); i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//if the result is valid</span></span><br><span class="line">                <span class="keyword">if</span> (__builtin_popcount(mask &amp; a[i]) == <span class="number">0</span>)</span><br><span class="line">                    <span class="comment">//go to combine with next element</span></span><br><span class="line">                    <span class="built_in">dfs</span>(i + <span class="number">1</span>, mask | a[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dfs</span>(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
-            
-                <ul id="audio-list" style="display:none">
-                    
+                <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+                <audio id="audio" loop="1" preload="auto" controls="controls"
+                    data-autoplay=" false">
+                    <source type="audio/mpeg" src="">
+                </audio>
+                
+                    <ul id="audio-list" style="display:none">
                         
-                            <li title="0" data-url="http://music.163.com/song/media/outer/url?id=430224.mp3"></li>
-                        
+                            
+                                <li title="0" data-url="http://music.163.com/song/media/outer/url?id=430224.mp3"></li>
+                                
+                                        
+                    </ul>
                     
-                </ul>
-            
         </div>
-        <div id="gitalk-container" class="comment link">加载评论</div>
+        <div id="gitalk-container" class="comment link">Load Comments</div>
     </div>
     
 </div>
-
-
     </div>
 </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1.1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"vOffset":-100,"position":"right","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
