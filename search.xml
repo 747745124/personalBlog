@@ -677,7 +677,7 @@ if it&#39;s shorter, update table with the **path length and predecessor**
   </entry>
   <entry>
     <title>Portfolio Site</title>
-    <url>/2021/12/15/Portfolio%20Site%20Online/</url>
+    <url>/2021/12/30/Portfolio%20Site%20Online/</url>
     <content><![CDATA[<p>Recently I began my Master application for 2022 Fall, and some of the universities (UCSB), require the applicants to submit their portfolio in the form of personal website. I was intended to submit this site, however, this site only contains daily logs and technical topic posts. So I would rather create another website for my portfolio works.</p>
 <p>After one afternoon’s work, new Portfolio Website was online, powering by Wix. Actually I found the Wix tool quite easy to use, only drags and drops are needed, just like what they’ve shown in the Youtube ads. The problem is, it’s not suitable for me to contantly update the contents since it tooks a lot more to render a single site in Wix. You have to drag and drop each paragraph yourself. However, it’s pretty easy to publish a post in Hexo. I can just use Typora and markdown to upload a post in seconds. Also, Wix doesn’t have good support for code snippets as the Markdown does. So I‘m just gonna post most of my daily thoughts and progresses here. And major works on the portfolio site.</p>
 <p>I actually want to merge these two sites, this site and the portfolio site, into one. However, I find the two sites’ styles are quite different and I’m not interested in writing pieces of CSS code anyway. Maybe I will merge them someday.</p>
@@ -689,6 +689,127 @@ if it&#39;s shorter, update table with the **path length and predecessor**
       <tags>
         <tag>Design</tag>
         <tag>About Me</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Blender 3.1 Alpha Render Test on M1 Max</title>
+    <url>/2021/12/11/Blender%203.1%20Render%20Test/</url>
+    <content><![CDATA[<h2 id="All-Scenes-are-rendered-using-cycles-using-GPU-Compute-1080P"><a href="#All-Scenes-are-rendered-using-cycles-using-GPU-Compute-1080P" class="headerlink" title="All Scenes are rendered using cycles using GPU Compute 1080P"></a>All Scenes are rendered using cycles using GPU Compute 1080P</h2><h3 id="1-Classroom-300-Samplings"><a href="#1-Classroom-300-Samplings" class="headerlink" title="1.Classroom 300 Samplings"></a>1.Classroom 300 Samplings</h3><ul>
+<li><p>Result: 1min 47.32s = 107.32s </p>
+</li>
+<li><p>Boost compared to CPU: 8*60/107.32 = 4.47x</p>
+</li>
+<li><p>Roughly equivalent to CUDA 3060Ti @Blender 2.9x </p>
+</li>
+<li><p>Roughtly equivalent to Optix 2080 @Blender 2.8x and Optix 3060 @Blender 2.9x</p>
+</li>
+<li><p>According to Rob Williams@<a href="https://techgage.com/article/blender-3-0-gpu-performance/">https://techgage.com/article/blender-3-0-gpu-performance/</a>, the performance of M1 Max is half of the 3060 with Optix 3060 @Blender 3.00. If we assume there is a performance boost of 2 times in Cycles from 2.9x to 3.00, a rough equivalent will be 2060 Max-Q (206s Optix 2.93).</p>
+<p><img src="https://s2.loli.net/2022/01/01/WiZIz8rKlXEcOYM.png" alt="image-20220101235753865"></p>
+</li>
+</ul>
+<h3 id="2-BMW27-GPU-Compute-1225-Samplings"><a href="#2-BMW27-GPU-Compute-1225-Samplings" class="headerlink" title="2.BMW27 (GPU Compute) 1225 Samplings"></a>2.BMW27 (GPU Compute) 1225 Samplings</h3><ul>
+<li>Result: 43.59s</li>
+<li>Boost Compared to CPU: 210/43.59 = 4.82x</li>
+<li>Roughly equivalent to CUDA 3060~3060Ti @Blender 2.9x </li>
+<li>Roughtly equivalent to Optix 2060 @Blender 2.8x and Optix 3050Ti @Blender 2.9x</li>
+<li><img src="https://s2.loli.net/2022/01/01/wZ35lDaBkiJ7mWQ.png" alt="image-20211219164344829" style="zoom:50%;" /></li>
+</ul>
+<h3 id="3-Barcelona-Pavilion-1000-Samplings"><a href="#3-Barcelona-Pavilion-1000-Samplings" class="headerlink" title="3.Barcelona Pavilion 1000 Samplings"></a>3.Barcelona Pavilion 1000 Samplings</h3><ul>
+<li>Result: 176.51s</li>
+<li>Boost Compared to CPU: 640/176.51 = 3.62x</li>
+<li>Roughly equivalent to CUDA 3070~3070Ti @Blender 2.9x </li>
+<li>Roughtly equivalent to Optix 2070 @Blender 2.8x and Optix 3050Ti @Blender 2.9x</li>
+<li><img src="https://s2.loli.net/2022/01/01/oBTbOQra1Dp8nZd.png" alt="image-20211219171113341" style="zoom:33%;" /></li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>Rendering</category>
+      </categories>
+      <tags>
+        <tag>Redering</tag>
+        <tag>Blender</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>折叠表达式(Fold Expression)，低速下脚现代C++ Chapter 2 Exercise</title>
+    <url>/2021/10/15/%E6%8A%98%E5%8F%A0%E8%A1%A8%E8%BE%BE%E5%BC%8F(Fold%20Expression)%EF%BC%9A%E4%BD%8E%E9%80%9F%E4%B8%8B%E8%84%9A%E7%8E%B0%E4%BB%A3C++%20Chapter%202%20Exercise/</url>
+    <content><![CDATA[<h3 id="折叠表达式（Fold-Expression）：低速下脚现代C-Chapter-2-Exercise"><a href="#折叠表达式（Fold-Expression）：低速下脚现代C-Chapter-2-Exercise" class="headerlink" title="折叠表达式（Fold Expression）：低速下脚现代C++ Chapter 2 Exercise"></a>折叠表达式（Fold Expression）：低速下脚现代C++ Chapter 2 Exercise</h3><p>最近在看高速上手现代C++，这是一本很不错的书，作者用仅80余页的长度介绍了C++自C++11以来至C++20带来的许多特性。这些特性给C++带来了语言可用性上的强化，运行期的强化 etc. 以及使得这门语言本身更好地支持例如函数式编程的范式。</p>
+<p>每一章的结尾作者都会提供一些简单的小题目，其中第二章的小题目cover了折叠表达式(Fold Expression, since C++17)和结构化绑定（Structured Binding, since C++17）。在自己闲着摸索的时候发现了一个有意思的小事情，于是稍微写点东西记录一下。</p>
+<blockquote>
+<p>感觉光看这本书和课后的题的话，内容还是不太能掌握，可能跟着其他博客看一看会比较好。</p>
+</blockquote>
+<h3 id="为什么需要Fold-Expression"><a href="#为什么需要Fold-Expression" class="headerlink" title="为什么需要Fold Expression?"></a>为什么需要Fold Expression?</h3><p>模版是C++比较重要的一个板块之一，但是C++11之前，模版的参数数量是固定的。自从C++11之后，新引入的表示方法允许声明时引入任意数量的参数，即如下形式:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Ts&gt;</span><br></pre></td></tr></table></figure>
+
+<p>有了可变长模版，我们就可以写一个允许任意长度参数的函数模版了。一个显而易见的好处是，我们可用这样的语法实现以下函数功能，并且只要写一个函数模版。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 一个函数模版 mean_val，接受任意长度的参数，返回平均值</span></span><br><span class="line"><span class="built_in">mean_val</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">// return 2</span></span><br><span class="line"><span class="built_in">mean_val</span>(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>) <span class="comment">// return 3.5</span></span><br></pre></td></tr></table></figure>
+
+<p>不过在C++17之前，这样的函数模版在解包(unpack)的时候会比较麻烦，因为我们在写函数模版的时候并不知道究竟会传几个参数进来，而参数包又不像是std::vector之类的容器有简单的方式进行遍历，因此我们对于函数参数的实际操作就变得比较麻烦。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//比如说我想实现max_val，但是我并没有直观的方式遍历args的内容</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Ts&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(Ts... args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//我该怎么获得args的内容呢？</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>不过目前来说，我们可以通过sizeof… 来计算参数的个数:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Ts&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(Ts... args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	std::cout&lt;&lt;<span class="keyword">sizeof</span>...(args)&lt;&lt;std::endl</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">foo</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">// cout:3</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="一个比较常见的做法是利用递归来进行参数解包"><a href="#一个比较常见的做法是利用递归来进行参数解包" class="headerlink" title="一个比较常见的做法是利用递归来进行参数解包:"></a>一个比较常见的做法是利用递归来进行参数解包:</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//书中的案例</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T0&gt; <span class="keyword">void</span> <span class="title">printf1</span><span class="params">(T0 value)</span> </span>&#123;</span><br><span class="line">std::cout &lt;&lt; value &lt;&lt; std::endl;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Ts&gt; </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printf1</span><span class="params">(T value, Ts... args)</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; value &lt;&lt; std::endl;<span class="comment">//每次取出一个T，然后递归再取出一个T</span></span><br><span class="line">    <span class="built_in">printf1</span>(args...);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf1</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="string">&quot;123&quot;</span>, <span class="number">1.1</span>); <span class="comment">//输出所有参数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这么做的确比较繁琐，而C++17中引入了一种比较简洁的方式来实现这种功能需求，这就是标题里的折叠表达式。</p>
+<ul>
+<li>考虑下面的代码，下面的函数模版可以实现任意长度立即数的求和。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> ... T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">sum</span><span class="params">(T ... t)</span> <span class="comment">//C++14，函数返回值自动推断</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	<span class="keyword">return</span> (t + ...); <span class="comment">//折叠表达式</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">sum</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>) &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>不过书中没有仔细讲这个折叠表达式的内容，因此原理上就有些不清晰，这里做一些补充。</p>
+<h3 id="折叠表达式的语法："><a href="#折叠表达式的语法：" class="headerlink" title="折叠表达式的语法："></a>折叠表达式的语法：</h3><ul>
+<li><code>pack op ...</code> (一元右折叠 / unary right fold)</li>
+<li><code>... op pack</code> (一元左折叠 / unary right fold)</li>
+<li><code>pack op ... op init</code> (二元右折叠 / binary right fold)</li>
+<li><code>init op ... op pack</code> (二元左折叠 / binary left fold)</li>
+</ul>
+<p>其中，<code>pack</code>是参数包，即上述代码中的t，op即operator，支持32种二元运算符，例如<code>+,-,*,/</code> , <code>init</code>表示最后一层展开时二元运算符的另一个操作数。 其中在二元折叠中两个operator要保持一致。</p>
+<h3 id="以上四个表达式和以下内容等价："><a href="#以上四个表达式和以下内容等价：" class="headerlink" title="以上四个表达式和以下内容等价："></a>以上四个表达式和以下内容等价：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(args op ...) &lt;-&gt; (arg1 op (arg2 op (arg3 op (... op (arg_n-1 op arg_n)))))</span><br><span class="line">(... op args) &lt;-&gt; (((arg1 op arg2) op ...) op arg_n)</span><br><span class="line">(args op ... op init) &lt;-&gt; (arg1 op (... op (arg_n−1 op (arg_n op init))))</span><br><span class="line">(init args op ... op ) &lt;-&gt; ((((init op arg1) op arg2) op ...) op arg_n)</span><br></pre></td></tr></table></figure>
+
+<p>这么写可能还是有点晕，举两个例子可能更好:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">args = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">(args - ...) &lt;-&gt; (<span class="number">1</span> - (<span class="number">2</span> - <span class="number">3</span>))</span><br><span class="line">(<span class="number">3</span> - ... - args) &lt;-&gt; (((<span class="number">3</span><span class="number">-1</span>)<span class="number">-2</span>)<span class="number">-3</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Ref: <a href="https://en.cppreference.com/w/cpp/language/fold">https://en.cppreference.com/w/cpp/language/fold</a></p>
+</blockquote>
+<p>下面是一个注意点，由于运算符优先级问题，第一种备注是掉的写法并不被接受，需要写成第二种写法</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> ...Args&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(Args&amp;&amp;... args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//  return (args + ... + 1 * 2);   // Error: operator with precedence below cast</span></span><br><span class="line">    <span class="keyword">return</span> (args + ... + (<span class="number">1</span> * <span class="number">2</span>)); <span class="comment">// OK</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="作业题："><a href="#作业题：" class="headerlink" title="作业题："></a>作业题：</h3><p>利用折叠表达式写一个计算求均值的函数模版:</p>
+<p>答案如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... T&gt;</span><br><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">mean</span><span class="params">(T... t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (t + ...) / <span class="keyword">sizeof</span>...(t);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">mean</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>) &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output: 3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="但是…"><a href="#但是…" class="headerlink" title="但是…"></a>但是…</h3><p>不知道为什么我突然想试着把 <code>+</code> 改成 <code>-</code></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">(t - ...)/<span class="keyword">sizeof</span>...(t) &lt;-&gt; (<span class="number">1</span>-(<span class="number">2</span>-(<span class="number">3</span>-(<span class="number">4</span><span class="number">-5</span>)))) = (<span class="keyword">int</span>)<span class="number">3</span>/<span class="number">5</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>这个例子倒是没有问题，如果我改成左折叠:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">return</span> (... - t) / <span class="keyword">sizeof</span>...(t);</span><br><span class="line"><span class="comment">//output: 3689348814741910320</span></span><br></pre></td></tr></table></figure>
+
+<p>这个一长串数字并不是随机数，运行了好几次都是同一个结果。但是:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">(... - t)/<span class="keyword">sizeof</span>...(t) &lt;-&gt; ((((<span class="number">1</span><span class="number">-2</span>)<span class="number">-3</span>)<span class="number">-4</span>)<span class="number">-5</span>)/<span class="number">5</span> = <span class="number">-13</span>/<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>本应该输出-2才对，那么究竟是哪里出问题了呢？</p>
+<h3 id="探索"><a href="#探索" class="headerlink" title="探索"></a>探索</h3><p>首先我查看了折叠表达式和<code>sizeof…(t)</code>的返回值，用lldb调试后发现数值没有问题，那么应该是除法这一步出了问题。</p>
+<p><img src="https://s2.loli.net/2022/01/01/v2aCilBbDmuOLEj.png" alt="image-20220101230639043"></p>
+<p>当我将p的类型从auto改为int之后，返回值就变成-2了：</p>
+<p><img src="https://s2.loli.net/2022/01/01/16UWplfXmMLCNTv.png" alt="image-20220101230834880"></p>
+<p>那么看来应该是<code>sizeof…</code>返回值的问题。</p>
+<h3 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h3><p>询问学长之后发现，<code>sizeof...</code>返回的是一个<code>size_t</code>类型的值，在64-bit操作系统中类型是<code>uint64_t</code>，即64位无符号整型。然后折叠表达式自动推断返回为int（<code>int32_t</code>), 二者做除法的时候int被提升到<code>uint64_t</code>，然后又因为负数的符号位在最高位，被转换成unsigned的时候，数值就变得非常大了。</p>
+<p>可以具体算一下这个<code>3689348814741910320</code>的由来，结果是一致的。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-13 = (hex) FFFFFFFFFFFFFFF3 -&gt; 18,446,744,073,709,551,603</span><br><span class="line">int(18,446,744,073,709,551,603 / 5) = 3689348814741910320</span><br></pre></td></tr></table></figure>
+
+<p>所以需要注意的是，一行的表达式，其实包含了一次类型推断和一次隐式类型转换，所以使用的时候需要比较小心一些。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">(t + ...) / <span class="keyword">sizeof</span>...(t);</span><br><span class="line"><span class="comment">//equivalent as below</span></span><br><span class="line"><span class="keyword">auto</span> p = (t + ...);</span><br><span class="line"><span class="keyword">size_t</span> i = <span class="keyword">sizeof</span>...(t);</span><br><span class="line"><span class="keyword">return</span> p/i;</span><br></pre></td></tr></table></figure>
+
+<p>等我看完Chapter 4的时候可能会再来写一点内容，感觉还是得一边看一边跟着例子写一点才好。</p>
+]]></content>
+      <categories>
+        <category>Programming</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
       </tags>
   </entry>
 </search>
