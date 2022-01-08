@@ -677,7 +677,7 @@ if it&#39;s shorter, update table with the **path length and predecessor**
   </entry>
   <entry>
     <title>Portfolio Site</title>
-    <url>/2021/12/30/Portfolio%20Site%20Online/</url>
+    <url>/2022/01/09/Portfolio%20Site%20Online/</url>
     <content><![CDATA[<p>Recently I began my Master application for 2022 Fall, and some of the universities (UCSB), require the applicants to submit their portfolio in the form of personal website. I was intended to submit this site, however, this site only contains daily logs and technical topic posts. So I would rather create another website for my portfolio works.</p>
 <p>After one afternoon’s work, new Portfolio Website was online, powering by Wix. Actually I found the Wix tool quite easy to use, only drags and drops are needed, just like what they’ve shown in the Youtube ads. The problem is, it’s not suitable for me to contantly update the contents since it tooks a lot more to render a single site in Wix. You have to drag and drop each paragraph yourself. However, it’s pretty easy to publish a post in Hexo. I can just use Typora and markdown to upload a post in seconds. Also, Wix doesn’t have good support for code snippets as the Markdown does. So I‘m just gonna post most of my daily thoughts and progresses here. And major works on the portfolio site.</p>
 <p>I actually want to merge these two sites, this site and the portfolio site, into one. However, I find the two sites’ styles are quite different and I’m not interested in writing pieces of CSS code anyway. Maybe I will merge them someday.</p>
@@ -889,6 +889,78 @@ if it&#39;s shorter, update table with the **path length and predecessor**
         <tag>LeetCode</tag>
         <tag>DataStructure</tag>
         <tag>Medium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1463. Cherry Pickup II</title>
+    <url>/2022/01/08/1463.%20Cherry%20Pickup%20II/</url>
+    <content><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h2><p>You are given a <code>rows x cols</code> matrix <code>grid</code> representing a field of cherries where <code>grid[i][j]</code> represents the number of cherries that you can collect from the <code>(i, j)</code> cell.</p>
+<p>You have two robots that can collect cherries for you:</p>
+<ul>
+<li><strong>Robot #1</strong> is located at the <strong>top-left corner</strong> <code>(0, 0)</code>, and</li>
+<li><strong>Robot #2</strong> is located at the <strong>top-right corner</strong> <code>(0, cols - 1)</code>.</li>
+</ul>
+<p>Return <em>the maximum number of cherries collection using both robots by following the rules below</em>:</p>
+<ul>
+<li>From a cell <code>(i, j)</code>, robots can move to cell <code>(i + 1, j - 1)</code>, <code>(i + 1, j)</code>, or <code>(i + 1, j + 1)</code>.</li>
+<li>When any robot passes through a cell, It picks up all cherries, and the cell becomes an empty cell.</li>
+<li>When both robots stay in the same cell, only one takes the cherries.</li>
+<li>Both robots cannot move outside of the grid at any moment.</li>
+<li>Both robots should reach the bottom row in <code>grid</code>.</li>
+</ul>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h3><p><img src="https://assets.leetcode.com/uploads/2020/04/29/sample_1_1802.png" alt="sample_1_1802"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Input: grid = [[3,1,1],[2,5,1],[1,5,5],[2,1,1]]</span><br><span class="line">Output: 24</span><br><span class="line">Explanation: Path of robot #1 and #2 are described in color green and blue respectively.</span><br><span class="line">Cherries taken by Robot #1, (3 + 2 + 5 + 2) = 12.</span><br><span class="line">Cherries taken by Robot #2, (1 + 5 + 5 + 1) = 12.</span><br><span class="line">Total of cherries: 12 + 12 = 24.</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2:"></a>Example 2:</h3><p><img src="https://assets.leetcode.com/uploads/2020/04/23/sample_2_1802.png" alt="sample_2_1802"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Input: grid = [[1,0,0,0,0,0,1],[2,0,0,0,0,3,0],[2,0,9,0,0,0,0],[0,3,0,5,4,0,0],[1,0,2,3,0,0,6]]</span><br><span class="line">Output: 28</span><br><span class="line">Explanation: Path of robot #1 and #2 are described in color green and blue respectively.</span><br><span class="line">Cherries taken by Robot #1, (1 + 9 + 5 + 2) = 17.</span><br><span class="line">Cherries taken by Robot #2, (1 + 3 + 4 + 3) = 11.</span><br><span class="line">Total of cherries: 17 + 11 = 28.</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints:"></a><strong>Constraints:</strong></h3><ul>
+<li><code>rows == grid.length</code></li>
+<li><code>cols == grid[i].length</code></li>
+<li><code>2 &lt;= rows, cols &lt;= 70</code></li>
+<li><code>0 &lt;= grid[i][j] &lt;= 100</code></li>
+</ul>
+<blockquote>
+<p>We have a maximum input size of 70*70 = 4900, a loose limit would be $O((mn)^2)$.</p>
+</blockquote>
+<h3 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition:"></a>Intuition:</h3><ul>
+<li>Each round, each robot would go exactly one step down. And they will always move forward until reaching the end.<ul>
+<li>In this way, we can describe the status of two robots by a 3-element tuple <code>(y,x1,x2)</code>. Since <code>#y: row #x: col</code>, there are $O(r*c^2)$ combinations</li>
+</ul>
+</li>
+<li><code>dp[y][x1][x2]</code> means the maximum cherries collected at this combination</li>
+<li>Base Case: <code>y&gt;=r, x&lt;0 or x&gt;c</code> (out of bounary), return 0</li>
+<li><strong>Transition Equation:</strong> <code>dp[y+1][x1][x2] =&#123;max[y][x1&#39;][x2&#39;] + grid[y][x1]+grid[y][x2] if x1!=x2 else 0&#125;</code></li>
+<li>Time Complexity: $O(r<em>c^2</em>9)$</li>
+<li>Space Complexity: $O(r*c^2)$</li>
+<li><strong>To get the answer:</strong> find the maximum value in <code>dp[r-1][x1][x2]</code> (traverse)</li>
+</ul>
+<h3 id="A-Reverse-Solution"><a href="#A-Reverse-Solution" class="headerlink" title="A Reverse Solution:"></a>A Reverse Solution:</h3><p>Robots start at any grid in the last level, and then they go up until one goes to the left corner, the other go to the right corner.</p>
+<ul>
+<li><p><strong>Transition Equation:</strong> <code>dp[y][x1][x2] =&#123;max[y+1][x1&#39;][x2&#39;] + grid[y][x1]+grid[y][x2] if x1!=x2 else 0</code>}</p>
+</li>
+<li><p><strong>To get the answer</strong>: <code>dp[0][0][c-1]</code></p>
+</li>
+</ul>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">using</span> triArr = vector&lt;vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&gt;;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">cherryPickup</span><span class="params">(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; &amp;grid)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;r = grid.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">this</span>-&gt;c = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">triArr <span class="title">dp</span><span class="params">(r, vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;(c, vector&lt;<span class="keyword">int</span>&gt;(c, <span class="number">-1</span>)))</span></span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">helper</span>(<span class="number">0</span>, <span class="number">0</span>, c - <span class="number">1</span>, grid, dp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// used for recursion</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> y, <span class="keyword">int</span> x1, <span class="keyword">int</span> x2, vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; &amp;grid, triArr &amp;dp)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x1 &lt; <span class="number">0</span> || x1 &gt;= c || x2 &lt; <span class="number">0</span> || x2 &gt;= c || y &gt;= r || y &lt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> ans = dp[y][x1][x2];</span><br><span class="line">		</span><br><span class="line">        <span class="comment">//if visited return</span></span><br><span class="line">        <span class="keyword">if</span> (ans != <span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">bool</span> isSame = x1 == x2;</span><br><span class="line">        <span class="keyword">int</span> cur = grid[y][x1] + (isSame ? <span class="number">0</span> : grid[y][x2]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d1 = <span class="number">-1</span>; d1 &lt;= <span class="number">1</span>; d1++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> d2 = <span class="number">-1</span>; d2 &lt;= <span class="number">1</span>; d2++)</span><br><span class="line">            &#123; <span class="comment">// each round find the max one from 9 combinations</span></span><br><span class="line">                ans = <span class="built_in">max</span>(ans, cur + <span class="built_in">helper</span>(y + <span class="number">1</span>, x1 + d1, x2 + d2, grid, dp));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">        <span class="comment">//update the answer</span></span><br><span class="line">        dp[y][x1][x2] = ans;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Programming</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>LeetCode</tag>
+        <tag>Dynamic Programming</tag>
+        <tag>Hard</tag>
       </tags>
   </entry>
 </search>
