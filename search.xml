@@ -677,7 +677,7 @@ if it&#39;s shorter, update table with the **path length and predecessor**
   </entry>
   <entry>
     <title>Portfolio Site</title>
-    <url>/2022/01/16/Portfolio%20Site%20Online/</url>
+    <url>/2022/01/20/Portfolio%20Site%20Online/</url>
     <content><![CDATA[<p>Recently I began my Master application for 2022 Fall, and some of the universities, require the applicants to submit their portfolio in the form of personal website. I was intended to submit this site, however, this site only contains daily logs and technical topic posts. So I would rather create another website for my portfolio works.</p>
 <p>After one afternoon’s work, new Portfolio Website was online, powering by Wix. Actually I found the Wix tool quite easy to use, only drags and drops are needed, just like what they’ve shown in the Youtube ads. The problem is, it’s not suitable for me to contantly update the contents since it tooks a lot more to render a single site in Wix. You have to drag and drop each paragraph yourself. However, it’s pretty easy to publish a post in Hexo. I can just use Typora and markdown to upload a post in seconds. Also, Wix doesn’t have good support for code snippets as the Markdown does. So I‘m just gonna post most of my daily thoughts and progresses here. And major works on the portfolio site.</p>
 <p>I actually want to merge these two sites, this site and the portfolio site, into one. However, I find the two sites’ styles are quite different and I’m not interested in writing pieces of CSS code anyway. Maybe I will merge them someday.</p>
@@ -1074,27 +1074,27 @@ if it&#39;s shorter, update table with the **path length and predecessor**
 <p>It’s pretty obvious that, the higher the value is, the higher the similarity is.</p>
 <p>$Similarity(T_1,T_2) ==1 \iff T1\triangleq T2$</p>
 <h4 id="What-is-a-best-matching"><a href="#What-is-a-best-matching" class="headerlink" title="What is a best matching?"></a>What is a best matching?</h4><p>Now we know that, what means a good matching between two triangles.</p>
-<p>$best_match(set(A),set(B)) = max(Similarity(set(X),set(Y)), where\ X.size== Y.size==3)$</p>
+<p>$best_{match}(set(A),set(B)) = max(Similarity(set(X),set(Y)), where\ X.size== Y.size==3)$</p>
 <p><strong>Note that, the higher the similarity function value, the better the matching is.</strong>  In this way, to find out the best triangle matching, we only have to find out two ordered sets of point pairs (with a size of 3), which have the highest similarity function value. And such pair is the best matching by our definition.</p>
 <p>Actually, we can extend this Similarity Function to polygons with more than 3 edges.</p>
-<h4 id="Best-matching-mathematically"><a href="#Best-matching-mathematically" class="headerlink" title="Best matching, mathematically"></a>Best matching, mathematically</h4><p>$best_match(set(A),set(B)) = max(Similarity(set(X),set(Y))$</p>
+<h4 id="Best-matching-mathematically"><a href="#Best-matching-mathematically" class="headerlink" title="Best matching, mathematically"></a>Best matching, mathematically</h4><p>$best_{match}(set(A),set(B)) = max(Similarity(set(X),set(Y))$</p>
 <p>$where\ X.size== Y.size==min(A.size(),B.size())$</p>
 <p>The Similarity of between 2 size n sets match is defined as below:</p>
 <img src="https://i.loli.net/2021/10/22/nuXArDg2wFjoEYT.png" alt="image-20211022000404251" style="zoom:50%;" />
 
 <p>Which is simply the <mark>average of all correspoding triangles’ similarity.</mark> (T means Triangle)</p>
 <h4 id="Match-Representation-Tree"><a href="#Match-Representation-Tree" class="headerlink" title="Match Representation: Tree"></a>Match Representation: Tree</h4><p>To find out the best possible match, we have to traverse all possible match sequence, but how do we represent an ordered match between two sets of points?  The answer is tree.</p>
-<p>We use a tree node, formed by a point pair to denote a possible match. So a possible node is (a,p), and there’s m*n (m = setA.size(), n = setB.size()) possible nodes in total. And the children of node (a,p) should be next possible match, in this case, if we only take clockwise move into account, the next possible match is either (c,r) or (c,o).</p>
+<p>We use a tree node, formed by a point pair to denote a possible match. So a possible node is <code>(a,p)</code>, and there’s <code>m*n</code> (<code>m = setA.size()</code>, <code>n = setB.size()</code>) possible nodes in total. And the children of node <code>(a,p)</code> should be next possible match, in this case, if we only take clockwise move into account, the next possible match is either <code>(c,r)</code> or <code>(c,o)</code>.</p>
 <img src="https://i.loli.net/2021/10/21/hmfLre1kR9W3Ewj.png" alt="image-20211021214429442" style="zoom:50%;" />
 
-<h5 id="You-may-ask-why-not-c-q-be-the-next-possible-match-This-is-because-we-have-to-follow-another-rule"><a href="#You-may-ask-why-not-c-q-be-the-next-possible-match-This-is-because-we-have-to-follow-another-rule" class="headerlink" title="You may ask, why not (c,q) be the next possible match?  This is because we have to follow another rule."></a>You may ask, why not (c,q) be the next possible match?  This is because we have to follow another rule.</h5><h4 id="Yet-another-important-rule-Monotonous"><a href="#Yet-another-important-rule-Monotonous" class="headerlink" title="Yet another important rule: Monotonous"></a>Yet another important rule: Monotonous</h4><p>The word <strong>monotonus</strong>, in this context, meaning moving in the same direction from begining to the end. This means that, you can’t go from r to q (clockwise), and then go from q to o (counter-clockwise). Think about it, a matching subsequence (c,r)(b,q)(a,o) breaks the rule of monotonicity. If you connect $RQ$ and $QO$, you will find that $RQ$ overlaps with $QO$.</p>
+<h5 id="You-may-ask-why-not-c-q-be-the-next-possible-match-This-is-because-we-have-to-follow-another-rule"><a href="#You-may-ask-why-not-c-q-be-the-next-possible-match-This-is-because-we-have-to-follow-another-rule" class="headerlink" title="You may ask, why not (c,q) be the next possible match?  This is because we have to follow another rule."></a>You may ask, why not (c,q) be the next possible match?  This is because we have to follow another rule.</h5><h4 id="Yet-another-important-rule-Monotonous"><a href="#Yet-another-important-rule-Monotonous" class="headerlink" title="Yet another important rule: Monotonous"></a>Yet another important rule: Monotonous</h4><p>The word <strong>monotonus</strong>, in this context, meaning moving in the same direction from begining to the end. This means that, you can’t go from r to q (clockwise), and then go from q to o (counter-clockwise). Think about it, a matching subsequence <code>(c,r)(b,q)(a,o)</code> breaks the rule of monotonicity. If you connect $RQ$ and $QO$, you will find that $RQ$ overlaps with $QO$.</p>
 <p>In fact, you will find out that generally, if a set of points is not connected in a monotonous order (in the same direction), overlapping and crossing edge could happen.</p>
 <img src="https://s2.loli.net/2022/01/17/2YjmF46IlrqugKx.png" alt="PNG图像" style="zoom:50%;" />
 
 <p>So inorder to conform to the monotonous rule, the point matching should be move in a certain and unchanged direction, either clock-wise or counter clockwise.<mark> For simplicity, we assume both of the polygons moves clockwise.</mark> <strong>( This leaves a problem in the case of mirrored polygon matching, because in mirrored polygons, two polygons are connected in different direction )</strong> </p>
 <p>Although we can simply don’t take mirrored polygons into account, an intuitive concept solution is given at the end of the report.</p>
 <p>Since we only allow clockwise moves, <code>(a,p)(c,q)</code> is not a valid match sequence. </p>
-<h4 id="How-many-starting-node"><a href="#How-many-starting-node" class="headerlink" title="How many starting node?"></a>How many starting node?</h4><p>On first thought, you may assume that there’s m*n (m = setA.size(), n = setB.size())  starting point. However, <strong>the nodes in the triangle are logically equivalent.</strong> In the example, setA has a fewer size of 3, which means in next possible match, the first polygon can only move one step clockwise. And you may already find that, once the starting point of polygon A is fixed, the possible match sequence of A is fixed. However, there’s 4 different possibilities of polygon B with a fixed starting point.</p>
+<h4 id="How-many-starting-node"><a href="#How-many-starting-node" class="headerlink" title="How many starting node?"></a>How many starting node?</h4><p>On first thought, you may assume that there’s <code>m*n</code> (<code>m = setA.size(), n = setB.size()</code>)  starting point. However, <strong>the nodes in the triangle are logically equivalent.</strong> In the example, setA has a fewer size of 3, which means in next possible match, the first polygon can only move one step clockwise. And you may already find that, once the starting point of polygon A is fixed, the possible match sequence of A is fixed. However, there’s 4 different possibilities of polygon B with a fixed starting point.</p>
 <p>So in this case, <strong>we actually have max(m,n) staring nodes</strong>. And for simplicity, we assume that the polygon A always starts at point A.</p>
 <h4 id="Sample-Case-Tree"><a href="#Sample-Case-Tree" class="headerlink" title="Sample Case Tree:"></a>Sample Case Tree:</h4><p>With all that being said, all possible match sequences in the sample case are show as tree below.</p>
 <p><img src="https://i.loli.net/2021/10/22/YDSy9XgwINpMKbq.png" alt="PNG图像 2"></p>
@@ -1120,15 +1120,15 @@ if it&#39;s shorter, update table with the **path length and predecessor**
 <li>The storage of vector is handled automatically, and usually extra memory is allocated for the growth of the vector.</li>
 <li>Each time we insert a element to the vector, as long as the extra memory isn’t exhausted, we don’t need to reallocate memory (memory reallocation is expensive).</li>
 <li>Time Complexity:<ul>
-<li>Random Access: O(1)</li>
-<li>Insertion or Remove at the end:O(1)</li>
-<li>Insertion or Remove at the front: O(n)</li>
+<li>Random Access: $O(1)$</li>
+<li>Insertion or Remove at the end:$O(1)$</li>
+<li>Insertion or Remove at the front: $O(n)$</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>std::function<ul>
-<li>std::function is a general wrapper for function, it can store any copyconstructible callable object.</li>
+<li><code>std::function</code><ul>
+<li><code>std::function</code> is a general wrapper for function, it can store any copyconstructible callable object.</li>
 <li>Can be used to store lambda expressions, member functions etc.</li>
 <li>One usage is to pass function to function (Like function pointers).<ul>
 <li>It has no call overhead</li>
@@ -1137,16 +1137,16 @@ if it&#39;s shorter, update table with the **path length and predecessor**
 </li>
 </ul>
 </li>
-<li>std::pair<ul>
+<li><code>std::pair</code><ul>
 <li>This is used to store 2 different objects in a single unit.</li>
 <li>Can be replaced by struct, but std::pair offers a easier way to do so.</li>
-<li>To assign value a and b to a pair&lt;int,int&gt;<ul>
-<li>Pair = make_pair(a,b);</li>
+<li>To assign value a and b to a <code>pair&lt;int,int&gt;</code><ul>
+<li><code>Pair = make_pair(a,b)</code>;</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>std::map (Actually can be replaced by set or vector)<ul>
+<li><code>std::map</code> (Actually can be replaced by set or vector)<ul>
 <li><p>This structure is used to store a key-&gt;value pair</p>
 </li>
 <li><p>The implementation of Red-Black tree ensures a key-sorted traversal order.</p>
@@ -1167,10 +1167,10 @@ if it&#39;s shorter, update table with the **path length and predecessor**
 <li>the children of a red node is black</li>
 <li>Any path from external node to root, the number of black nodes along the path are the same.</li>
 </ul>
-<h4 id="A-sample-red-black-tree"><a href="#A-sample-red-black-tree" class="headerlink" title="A sample red-black tree"></a>A sample red-black tree</h4><img src="/Users/naoyuki/Library/Application%20Support/typora-user-images/image-20211028155810975.png" alt="image-20211028155810975" style="zoom:50%;" /></li>
+<h4 id="A-sample-red-black-tree"><a href="#A-sample-red-black-tree" class="headerlink" title="A sample red-black tree"></a>A sample red-black tree</h4><img src="https://s2.loli.net/2022/01/17/mrOg85bEWHSvKIN.png" alt="image-20211028155810975" style="zoom:50%;" /></li>
 </ul>
 </li>
-<li>std::chrono<ul>
+<li><code>std::chrono</code><ul>
 <li>This library is used for tracking time with different type of precision.</li>
 <li>An massive extension to the time.h</li>
 <li><strong>system_clock</strong> offers a wall clock</li>
@@ -1221,10 +1221,10 @@ if it&#39;s shorter, update table with the **path length and predecessor**
 <h4 id="Simple-Idea-Get-the-first-m-most-votes"><a href="#Simple-Idea-Get-the-first-m-most-votes" class="headerlink" title="Simple Idea:  Get the first m-most votes"></a>Simple Idea:  Get the first m-most votes</h4><blockquote>
 <p>To use this method, #define _VOTE_ORDER</p>
 </blockquote>
-<p>Suppose we have a voting table like this, we have to decide the best match out of the table, we just order them by votes. The result would be (a,q)(c,o)(c,r).</p>
+<p>Suppose we have a voting table like this, we have to decide the best match out of the table, we just order them by votes. The result would be <code>(a,q)(c,o)(c,r)</code>.</p>
 <img src="/Users/naoyuki/Library/Mobile%20Documents/com~apple~CloudDocs/PNG%E5%9B%BE%E5%83%8F%205.png" alt="PNG图像 5" style="zoom:50%;" />
 
-<p>c appears twice in a matching sequence, so this simple idea is sometimes problematic for collision (c,o) and (c,r), although this isn’t very likely to happen with a properly set threshold.</p>
+<p>c appears twice in a matching sequence, so this simple idea is sometimes problematic for collision<code>(c,o)</code>and <code>(c,r)</code>, although this isn’t very likely to happen with a properly set threshold.</p>
 <h4 id="An-Improved-Idea-for-anti-collision-Vote-By-Row"><a href="#An-Improved-Idea-for-anti-collision-Vote-By-Row" class="headerlink" title="An Improved Idea for anti-collision: Vote By Row"></a>An Improved Idea for anti-collision: Vote By Row</h4><blockquote>
 <p>To use this method, #define _ROW_ORDER</p>
 </blockquote>
