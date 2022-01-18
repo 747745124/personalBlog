@@ -1052,7 +1052,7 @@ if it&#39;s shorter, update table with the **path length and predecessor**
 <img src="https://i.loli.net/2021/10/21/hmfLre1kR9W3Ewj.png" alt="image-20211021214429442" style="zoom:50%;" />
 
 <p>You can tell that, the match  (a,p), (b,r), (c,q) is not a good match, because $\angle A \ll \angle P$.</p>
-<p>In this case, since $ \triangle ABC \sim \triangle QRP$, so we get a good match {(c,p),(b,r),(a,q)}</p>
+<p>In this case, since $ \triangle ABC \sim \triangle QRP$, so we get a good match <code>(c,p),(b,r),(a,q)</code></p>
 <p>But you may ask, <strong>Is that match the best match? What is a best matching mathematically?  What if there’s no mathematically similar polygons?</strong>  Well, these problems can be solved by giving our definition of “Good Match”. Through this case, you may get a sense of what is a good match, that is,  <strong>we can define the how well a match is by the similarity between matching points.</strong></p>
 <p>A mathematic description is given as below.</p>
 <h3 id="Good-Matching"><a href="#Good-Matching" class="headerlink" title="Good Matching:"></a>Good Matching:</h3><h4 id="Similarity-Function"><a href="#Similarity-Function" class="headerlink" title="Similarity Function:"></a>Similarity Function:</h4><p>Follow the principle that: <strong>Define how well a match is by the similarity between matching points.</strong> We have to firstly define a similarity function between two sets of points.</p>
