@@ -239,12 +239,12 @@
 
 
 
-<img src="/Users/naoyuki/Library/Application%20Support/typora-user-images/image-20230522223149832.png" alt="image-20230522223149832" style="zoom:33%;" />
+<img src="https://s2.loli.net/2023/05/23/vhnUw7z6Z1xqeHg.png" alt="image-20230522223149832" style="zoom:33%;" />
 
 <p>After applying this method to the scene rendering, I lost some of the triangles in the scene. However, all spheres are kept intact. For example, here’s what I got after applying BVH and the latter is before BVH.</p>
-<img src="/Users/naoyuki/Library/Application%20Support/typora-user-images/image-20230522224231933.png" alt="image-20230522224231933" style="zoom:33%;" />
+<img src="https://s2.loli.net/2023/05/23/dN6TeBRK4MjtzSm.png" alt="image-20230522224231933" style="zoom:33%;" />
 
-<img src="/Users/naoyuki/Library/Application%20Support/typora-user-images/image-20230522224256173.png" alt="image-20230522224256173" style="zoom:33%;" />
+<img src="https://s2.loli.net/2023/05/23/xQ8LMCgjAqoVWPw.png" alt="image-20230522224256173" style="zoom:33%;" />
 
 <p> After couple hours of <code>step_into</code> debugging, I found the reason to be as follows:</p>
 <blockquote>
