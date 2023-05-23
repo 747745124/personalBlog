@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://naoyuki.top/2023/05/22/Little%20Caveat%20in%20BVH%20of%20Triangles/</loc>
+    
+    <lastmod>2023-05-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://naoyuki.top/2023/03/23/%E9%9B%A8%E6%BB%B4%E5%90%88%E6%88%90%E5%99%A8/</loc>
     
     <lastmod>2023-03-24</lastmod>
@@ -172,7 +179,7 @@
 
   <url>
     <loc>http://naoyuki.top/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -180,147 +187,154 @@
   
   <url>
     <loc>http://naoyuki.top/tags/C-C/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/LeetCode/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/DataStructure/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/tags/Easy/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/Medium/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/Easy/</loc>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/Dynamic-Programming/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/Hard/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/Rendering/</loc>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/Computer-Networks/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/tags/Design/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/tags/About-Me/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/Point-Matching/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/tags/Redering/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/tags/Blender/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/Data-Structure/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/Operating-System/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/tags/Audio-Programming/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/tags/JUCE/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/Music/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/tags/Lyrics/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/Redering/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/Blender/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/Design/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/About-Me/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/Audio-Programming/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/tags/JUCE/</loc>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -329,49 +343,49 @@
   
   <url>
     <loc>http://naoyuki.top/categories/Programming/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/categories/Design/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/categories/Rendering/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/categories/Computing/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/categories/Life-Journal/</loc>
-    <lastmod>2023-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://naoyuki.top/categories/Audio-Programming/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://naoyuki.top/categories/Translation/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/categories/Design/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/categories/Life-Journal/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/categories/Audio-Programming/</loc>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
