@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://naoyuki.top/2023/06/20/One%20Day%20in%20Monterey/</loc>
+    
+    <lastmod>2023-06-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://naoyuki.top/2021/09/27/%E3%83%8E%E3%82%A8%E3%83%AB%E3%81%AE%E3%83%86%E3%83%BC%E3%83%9E%E3%80%80%E3%80%9C%E6%9C%80%E5%BE%8C%E3%81%AE%E6%97%85%E3%80%9C/</loc>
     
     <lastmod>2023-05-23</lastmod>
@@ -339,6 +346,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://naoyuki.top/tags/%E6%97%85%E8%A1%8C/</loc>
+    <lastmod>2023-06-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -385,6 +399,13 @@
   
   <url>
     <loc>http://naoyuki.top/categories/Audio-Programming/</loc>
+    <lastmod>2023-06-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://naoyuki.top/categories/Life-Journal-Travel/</loc>
     <lastmod>2023-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
